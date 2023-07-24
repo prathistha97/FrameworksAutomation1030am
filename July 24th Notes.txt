@@ -1,0 +1,86 @@
+
+-------------------------------
+24th July Monday
+-------------------------------
+
+
+how to read and write excel ?
+
+
+Apache Poi jars or dependencies 
+
+
+							excels
+							
+							
+			.xls								.xlsx
+
+
+
+			HSSFWorkbook(C)		Workbook(I)        XSSFWorkbook(C)
+			HSSFSheet(C)		Sheet(I)		   XSSFSheet(C)
+			HSSFRow(C)			Row(I)			   XSSFRow(C)
+			HSSFCell(C)			Cell(I)			   XSSFCell(C)
+
+	
+
+FileInputStream(C)
+
+
+java.io
+
+FileInputStream(File)
+FileInputStream(FileDescriptor)
+FileInputStream(String) : here String is the path of file including extension
+
+
+getSheet(String): here string is sheet name
+getSheetAt(int)	: int is index starts from 0		
+							
+							
+		FileInputStream fis=new FileInputStream("D:\\004 Live Tech\\Book1.xlsx");
+		
+		XSSFWorkbook wb=new XSSFWorkbook(fis);
+		
+		XSSFSheet ws=wb.getSheet("Sheet1");
+---------------------------------		
+Methods in Sheet :
+
+
+ws.getLastRowNum():int ==> this will give the index of last row where index starts from 0
+
+ws.getPhysicalNumberOfRows():int ==>this will give the count of rows exclusing empty rows		
+		
+ws.getRow(int):Row  ==> this will focus on Row whose index is given as int 		
+
+---------------------------------		
+Methods in Row :
+
+ws.getRow(1).getLastCellNum():int ==> this will give the index of last cell where index starts from 1
+
+row.getCell(j);Cell ==> this will focus on cell whose index is given as int 		
+
+==============================================================
+Excel Write 
+
+case 1:  modifying an existing cell
+
+case 2: creating a cell in existing row 
+
+case 3: creating a new row and cell in it 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
